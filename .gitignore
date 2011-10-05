@@ -1,0 +1,9 @@
+.Xauthority
+.ssh/
+.mozilla/
+.fontconfig/
+.dropbox-dist
+[a-z]*
+[A-Z]*
+[a-z]*/
+[A-Z]*/
