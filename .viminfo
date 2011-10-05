@@ -120,47 +120,54 @@ $number
 "0	LINE	0
 	[a-z]*/
 	[A-Z]*/
-"1	LINE	0
+""1	LINE	0
+	
+"2	LINE	0
+	[a-z]*
+	[A-Z]*
+	[a-z]*/
+	[A-Z]*/
+"3	LINE	0
+	.cache
+	.bash_history
+"4	LINE	0
 	398
 <192.168.178.23 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq8eczP8Tbm4U18AZZTFTQl5RUDY36b+wqxLt3RH1l6y+3yBd0T3wBlgGSLLkGjHJsFXe9/mOUC1kg03ZCS844KnvNToqEj5VKXEnHPTBqti/iUsZV2ceEGmxs2122Vfp6zXy6W0qdiMBWKcAfoMlWng4hFRirs1X/kvWp7UrLh9lBO8mzF/6DvRls0BaCv4/N4tMwqNVJo+3xuLkrXgWqmxO8HlDT63f3UkPI0Hzw+5nzQ22pFZ7/9PvwxbfrliOp3ysOLnXS4c42tYHgD2jHocGRuCluIjd1k5J1xL/Ed39gDXgI/HAByGh6Bts6FGcFKf/0k+fdqnfPqgcm2vb8w==
-"2	LINE	0
+"5	LINE	0
 	   - -incrementSeconds()
-"3	LINE	0
+"6	LINE	0
 	        repo    testing
 	                RW+     =   @all
-"4	LINE	0
-	  # match ':controller(/:action(/:id(.:format)))'
-"5	LINE	0
-	  # Note: This route will make all actions in every controller accessible via GET requests.
-"6	LINE	0
-	  # This is a legacy wild controller route that's not recommended for RESTful applications.
 "7	LINE	0
-	
+	  # match ':controller(/:action(/:id(.:format)))'
 "8	LINE	0
-	  # See how all your routes lay out with "rake routes"
+	  # Note: This route will make all actions in every controller accessible via GET requests.
 "9	LINE	0
-	
-""-	CHAR	0
+	  # This is a legacy wild controller route that's not recommended for RESTful applications.
+"-	CHAR	0
 	/
 
 # File marks:
-'0  1  19  ~/.git/COMMIT_EDITMSG
-'1  1  0  ~/.vimrc
-'2  7  5  ~/.gitignore
-'3  4  11  ~/.gitignore
-'4  1  0  ~/.oh-my-zsh/oh-my-zsh.sh
-'5  1  0  ~/.zshrc
-'6  23  0  ~/.zshrc
-'7  27  10  ~/.zshrc
-'8  14  0  ~/.oh-my-zsh/oh-my-zsh.sh
-'9  1  0  ~/.zsh
+'0  6  0  ~/.gitignore
+'1  1  0  ~/.gtk-bookmarks
+'2  1  19  ~/.git/COMMIT_EDITMSG
+'3  1  0  ~/.vimrc
+'4  28  5  ~/.gitignore
+'5  9  11  ~/.gitignore
+'6  1  0  ~/.oh-my-zsh/oh-my-zsh.sh
+'7  1  0  ~/.zshrc
+'8  23  0  ~/.zshrc
+'9  27  10  ~/.zshrc
 
 # Jumplist (newest first):
+-'  6  0  ~/.gitignore
+-'  7  0  ~/.gitignore
+-'  1  0  ~/.gitignore
+-'  1  0  ~/.gtk-bookmarks
 -'  1  19  ~/.git/COMMIT_EDITMSG
 -'  1  0  ~/.vimrc
--'  7  5  ~/.gitignore
--'  1  0  ~/.gitignore
--'  4  11  ~/.gitignore
+-'  28  5  ~/.gitignore
+-'  9  11  ~/.gitignore
 -'  1  0  ~/.oh-my-zsh/oh-my-zsh.sh
 -'  1  0  ~/.zshrc
 -'  23  0  ~/.zshrc
@@ -252,10 +259,60 @@ $number
 -'  8  0  ~/git/blog/app/controllers/posts_controller.rb
 -'  4  33  ~/git/blog/app/models/post.rb
 -'  4  35  ~/git/blog/app/views/home/index.html.erb
--'  1  0  ~/git/blog/app/views/home/index.html.erb
--'  1  0  ~/git/blog/db/migrate/20110920081629_create_posts.rb
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	"	6	0
+	^	6	0
+	.	5	0
+	+	28	5
+	+	9	12
+	+	10	12
+	+	28	6
+	+	28	6
+	+	28	0
+	+	28	5
+	+	28	5
+	+	28	0
+	+	11	0
+	+	26	0
+	+	25	0
+	+	24	0
+	+	23	0
+	+	22	0
+	+	21	0
+	+	20	0
+	+	19	0
+	+	18	0
+	+	17	0
+	+	16	0
+	+	15	0
+	+	14	0
+	+	12	0
+	+	14	0
+	+	12	13
+	+	14	0
+	+	15	0
+	+	16	0
+	+	17	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	23	0
+	+	24	0
+	+	25	0
+	+	26	0
+	+	28	0
+	+	7	0
+	+	1	0
+	+	1	0
+	+	5	0
+
+> ~/.gtk-bookmarks
+	"	1	0
 
 > ~/.git/COMMIT_EDITMSG
 	"	1	19
@@ -271,19 +328,6 @@ $number
 	+	2	10
 	+	3	25
 	+	6	8
-
-> ~/.gitignore
-	"	7	5
-	^	7	7
-	.	7	5
-	+	7	5
-	+	4	12
-	+	5	12
-	+	6	6
-	+	7	6
-	+	8	0
-	+	6	5
-	+	7	5
 
 > ~/.oh-my-zsh/oh-my-zsh.sh
 	"	1	0
