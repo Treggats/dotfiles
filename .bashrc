@@ -22,5 +22,4 @@ PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$
 
 # on a git repository it will output:
 # /path/to/directory(branch_name_in_yellow)$ [PROMPT]
-
-
+dropbox start
