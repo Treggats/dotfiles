@@ -3,6 +3,7 @@
 	email = tonko@tonkomulder.nl
 [core]
   pager = less -r
+  autocrlf = true
 
 [color]
   branch = auto
