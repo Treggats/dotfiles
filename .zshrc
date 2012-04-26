@@ -1,29 +1,26 @@
-# Path to your oh-my-zsh configuration.
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory autocd nomatch notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/tonko/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+alias ls='ls --color=auto -F'
+alias a='ls -A'
+
 export ZSH=$HOME/.oh-my-zsh
-
-# Set to the name theme to load.
-# Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="candy"
-
-# Set to this to use case-sensitive completion
-# export CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# export DISABLE_AUTO_TITLE="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler rails3 ruby rvm git git-flow github lol)
-
+export ZSH_THEME='candy'
 source $ZSH/oh-my-zsh.sh
 export PAGER='less -LR'
 export EDITOR='vim'
-#export EDITOR='emacsclient -c'
-#export ALTERNATE_EDITOR=''
-export WINEARCH=win32
+
+export PROJECT_HOME=$WORKON_HOME
+source /usr/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
