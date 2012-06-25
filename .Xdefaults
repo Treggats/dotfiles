@@ -40,7 +40,7 @@ URxvt*saveLines: 10000
 !URxvt*perl-ext-common: default,tabbed
 
 !--[urls]--!
-URxvt.perl-lib:        /home/tass/.urxvt
+URxvt.perl-lib:        /home/tonko/.urxvt
 URxvt.perl-ext:        default,matcher,font-size
 URxvt.urlLauncher:     /usr/bin/chromium
 URxvt.matcher.button:  1 
