@@ -20,6 +20,8 @@ source $ZSH/oh-my-zsh.sh
 export PAGER='less -LR'
 export EDITOR='vim'
 
+source ~/.profile
+
 export PROJECT_HOME=$WORKON_HOME
 source /usr/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME

@@ -32,10 +32,9 @@ URxvt*saveLines: 10000
 
 !--[urls]--!
 URxvt.perl-lib:        /home/tonko/.urxvt
-URxvt.perl-ext:        default,matcher
-URxvt.urlLauncher:     /usr/bin/firefox
+URxvt.perl-ext:        default,matcher,font-size
+URxvt.urlLauncher:     /usr/bin/chromium
 URxvt.matcher.button:  1
-
 
 !--[cursor]--!
 URxvt*cursorBlink: true
