@@ -25,3 +25,6 @@
   added = yellow
   changed = green
   untracked = cyan
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 456x169+0+58
