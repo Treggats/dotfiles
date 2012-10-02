@@ -3,12 +3,14 @@
 	email = tonko@tonkomulder.nl
 [core]
   pager = less -r
-  autocrlf = true
+  autocrlf = false
+  editor = subl -w
 
 [color]
   branch = auto
   diff = auto
   status = auto
+  ui = auto
 
 [color "branch"]
   current = yellow reverse
@@ -25,6 +27,23 @@
   added = yellow
   changed = green
   untracked = cyan
+
+[diff]
+	tool = meld
+
+[alias]
+	st = status
+	b = branch
+	ba = branch -a
+	co = checkout
+	l = log --decorate --oneline
+	spull = svn rebase
+	spush = svn dcommit
+
 [giggle]
 	main-window-maximized = true
-	main-window-geometry = 456x169+0+58
+	main-window-geometry = 0x0+0+0
+	history-view-vpane-position = 191
+	file-view-vpane-position = 916
+	main-window-view = HistoryView
+	file-view-hpane-position = 317
