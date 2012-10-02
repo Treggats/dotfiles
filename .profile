@@ -21,4 +21,9 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+alias ls='ls --color=auto -F'
+alias a='ls -A'
+alias ll='ls -lh'
+alias la='a -lh'
+
 eval `keychain --eval --agents ssh id_dsa`
