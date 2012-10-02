@@ -11,8 +11,6 @@ zstyle :compinstall filename '/home/tonko/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-alias ls='ls --color=auto -F'
-alias a='ls -A'
 
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME='candy'
@@ -26,3 +24,8 @@ export PROJECT_HOME=$WORKON_HOME
 source /usr/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
+
+pretty_cat() { pygmentize -f terminal "$1" | cat }
+alias pcat=pretty_cat
+pretty_less() { pygmentize -f terminal "$1" | less -R }
+alias pless=pretty_less
