@@ -1,0 +1,2 @@
+# Keychain
+eval `keychain --eval --agents ssh id_dsa`
