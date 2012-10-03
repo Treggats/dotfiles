@@ -6,8 +6,8 @@ Xcursor.theme: ArchCursorBlue
 !--[term name]--!
 URxvt*termName: rxvt-unicode
 
-URxvt*background: black
-URxvt*foreground: white
+!URxvt*background: black
+!URxvt*foreground: white
 URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
 
