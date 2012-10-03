@@ -8,13 +8,6 @@ URxvt*scrollTtyOutput: false
 !--[term name]--!
 URxvt*termName: rxvt-unicode
 
-!--[trans and fg/bg]--!
-URxvt*tintColor: lightblue
-URxvt*transparent: true
-URxvt*shading: 25
-URxvt*depth: 24
-URxvt*borderless: 1
-
 !--[font]--!
 URxvt.font: xft:Terminus:autohint=true:pixelsize=10
 Xft.antialias: 1
@@ -22,34 +15,38 @@ Xft.hinting:    1
 Xft.hintstyle:  hintfull
 Xft.rgba:       rgb
 
+! terminal colors ------------------------------------------------------------
 
-!--[scrolling]--!
-URxvt*scrollBar: false
-URxvt*saveLines: 10000
+! tangoesque scheme
+*background: #111111
+*foreground: #babdb6
+! Black (not tango) + DarkGrey
+*color0:  #000000
+*color8:  #555753
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #204a87
+*color12: #3465a4
+! DarkMangenta + Mangenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #cccccc
+*color15: #ffffff
 
-!--[tabs]--!
-!URxvt*perl-ext-common: default,tabbed
+! Xcursor --------------------------------------------------------------------
 
-!--[urls]--!
-URxvt.perl-lib:        /home/tonko/.urxvt
-URxvt.perl-ext:        default,matcher,font-size
-URxvt.urlLauncher:     /usr/bin/chromium
-URxvt.matcher.button:  1
+Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.size:  22
 
-!--[cursor]--!
-URxvt*cursorBlink: true
-
-!--[Colours]--!
-URxvt*cursorColor: #FFFFFF
-URxvt*cursorColor2: #FFFFFF
-URxvt*background: #000000
-URxvt*foreground: #FFFFFF
-
-URxvt.keysym.Mod4-plus: perl:font:increase
-URxvt.keysym.Mod4-minus: perl:font:decrease
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
-URxvt.url-selet.launcher: chromium
-URxvt.url-select.underline: true
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
