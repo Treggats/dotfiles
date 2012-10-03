@@ -3,52 +3,31 @@ Xcursor.theme: ArchCursorBlue
 !   URvxt Stuff    !
 !------------------!
 
-URxvt*scrollTtyOutput: false
-
 !--[term name]--!
 URxvt*termName: rxvt-unicode
 
-!--[font]--!
+URxvt*background: black
+URxvt*foreground: white
+URxvt*scrollBar: false
+URxvt*scrollTtyOutput: false
+
 URxvt.font: xft:Terminus:autohint=true:pixelsize=10
-Xft.antialias: 1
-Xft.hinting:    1
-Xft.hintstyle:  hintfull
-Xft.rgba:       rgb
 
-! terminal colors ------------------------------------------------------------
+URxvt.transparent: true
+! URxvt.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt.shading: 110
 
-! tangoesque scheme
-*background: #111111
-*foreground: #babdb6
-! Black (not tango) + DarkGrey
-*color0:  #000000
-*color8:  #555753
-! DarkRed + Red
-*color1:  #ff6565
-*color9:  #ff8d8d
-! DarkGreen + Green
-*color2:  #93d44f
-*color10: #c8e7a8
-! DarkYellow + Yellow
-*color3:  #eab93d
-*color11: #ffc123
-! DarkBlue + Blue
-*color4:  #204a87
-*color12: #3465a4
-! DarkMangenta + Mangenta
-*color5:  #ce5c00
-*color13: #f57900
-!DarkCyan + Cyan (both not tango)
-*color6:  #89b6e2
-*color14: #46a4ff
-! LightGrey + White
-*color7:  #cccccc
-*color15: #ffffff
+URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext: default,url-select
+URxvt.urlLauncher: firefox
+URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.matcher.rend.0: Uline Bold fg7
+URxvt.matcher.button: 1
 
 ! Xcursor --------------------------------------------------------------------
 
-Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.size:  22
+!Xcursor.theme: Vanilla-DMZ-AA
+!Xcursor.size:  22
 
 ! Xft settings ---------------------------------------------------------------
 
@@ -57,23 +36,6 @@ Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
-
-! xterm ----------------------------------------------------------------------
-
-xterm*geometry:           80x25
-xterm*faceName:           terminus:bold:pixelsize=14
-!xterm*font:              -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
-xterm*dynamicColors:      true
-xterm*utf8:               2
-xterm*eightBitInput:      true
-xterm*saveLines:          512
-xterm*scrollKey:          true
-xterm*scrollTtyOutput:    false
-xterm*scrollBar:          true
-xterm*rightScrollBar:     true
-xterm*jumpScroll:         true
-xterm*multiScroll:        true
-xterm*toolBar:            false
 
 ! xpdf -----------------------------------------------------------------------
 
@@ -85,7 +47,7 @@ xpdf*urlCommand:        /usr/bin/firefox %s
 
 ! x11-ssh-askpass ------------------------------------------------------------
 
-x11-ssh-askpass*font:                   -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+x11-ssh-askpass*font:                   -*-Terminus-medium-r-*-*-12-*-*-*-*-*-*-*
 x11-ssh-askpass*background:             #000000
 x11-ssh-askpass*foreground:             #ffffff
 x11-ssh-askpass.Button*background:      #000000
@@ -95,3 +57,7 @@ x11-ssh-askpass*topShadowColor:         #000000
 x11-ssh-askpass*bottomShadowColor:      #000000
 x11-ssh-askpass.*borderWidth:           1
 
+! Disable encoding -----------------------------------------------------------
+
+URxvt*iso14755: false
+URxvt*iso14755_52: false
