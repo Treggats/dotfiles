@@ -1,0 +1,24 @@
+From 908d638ea161ab1c13d1e25168d9691ad778ff5c Mon Sep 17 00:00:00 2001
+From: Tonko Mulder <tonko.mulder@buyways.nl>
+Date: Thu, 4 Oct 2012 12:22:53 +0200
+Subject: [PATCH] changed my email to buyways
+
+---
+ .gitconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/.gitconfig b/.gitconfig
+index d48ef8c..0aa948f 100644
+--- a/.gitconfig
++++ b/.gitconfig
+@@ -1,6 +1,6 @@
+ [user]
+ 	name = Tonko Mulder
+-	email = tonko@tonkomulder.nl
++	email = tonko.mulder@buyways.nl
+ [core]
+   pager = less -r
+   autocrlf = false
+-- 
+1.7.12.2
+
