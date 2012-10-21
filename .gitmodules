@@ -1,3 +1,9 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = git@github.com:Treggats/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule ".vim/bundle/Command-T"]
+	path = .vim/bundle/Command-T
+	url = https://github.com/wincent/Command-T.git
+[submodule ".vim/bundle/FuzzyFinder"]
+	path = .vim/bundle/FuzzyFinder
+	url = https://github.com/vim-scripts/FuzzyFinder.git
