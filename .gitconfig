@@ -4,7 +4,6 @@
 [core]
   pager = less -r
   autocrlf = false
-  editor = subl -w
 
 [color]
   branch = auto
