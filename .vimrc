@@ -1,4 +1,5 @@
 set nocompatible               " be iMproved
+set showbreak=↪
 
 filetype off                   " required!
 
