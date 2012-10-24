@@ -64,6 +64,8 @@ folder-hook spam set sort=subject
 
 # My Editor
 set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
+# Refresh
+bind index "^" imap-fetch-mail
 
 # My Rolodeck :)
 # set alias_file= ~/.mutt/aliases
