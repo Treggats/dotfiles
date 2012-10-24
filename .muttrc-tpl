@@ -1,8 +1,3 @@
-set sort=threads
-set pager_index_lines=5#You might want to increase this
-set pager_context=1
-set index_format='%4C %Z %{%b %d} %-15.15F (%4l) %s'
-
 #Different colors for different levels of quoting
 color quoted    magenta         black
 color quoted1   blue            black
@@ -22,6 +17,9 @@ set realname = "Tonko Mulder"
 set imap_user = "tonko@tonkomulder.nl"
 set imap_pass = ""
 
+set smtp_url = "smtp://tonko@tonkomulder.nl@smtp.gmail.com:587/"
+set smtp_pass = ""
+
 set folder = "imaps://imap.gmail.com:993"
 set spoolfile = "+INBOX"
 set postponed = "+[Gmail]/Drafts"
@@ -30,3 +28,43 @@ set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
 set header_cache =~/.mutt/cache/headers
 set message_cachedir =~/.mutt/cache/bodies
 set certificate_file =~/.mutt/certificates
+
+bind editor <space> noop
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+
+set move = no  #Stop asking to "move read messages to mbox"!
+set imap_keepalive = 900
+
+# Header stuff
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+
+ignore *
+unignore from: date subject to cc
+unignore x-mailing-list: posted-to:
+unignore x-mailer:
+
+# For better looks
+set markers=no # don't put '+' at the beginning of wrapped lines
+set pager_index_lines= 5 # how large is the index window?
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+set pager_context=1
+set index_format='%4C %Z %{%b %d} %-15.15F (%4l) %s'
+
+# My Editor
+set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "?^$"'
+
+# My Rolodeck :)
+set alias_file= ~/.mutt/aliases
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
+
+group -group adverts -rx (someone@nxxxx.com|Annoing@neccesary.com|contentupdates@somewhere.com|vienna@germany.com|info@netflix.com)
+fcc-save-hook "%f adverts" "+[Gmail]/adverts"
