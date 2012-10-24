@@ -16,3 +16,17 @@ color quoted8   yellow          black
 color quoted9   cyan            black
 color signature blue            default
 
+set from = "tonko@tonkomulder.nl"
+set realname = "Tonko Mulder"
+
+set imap_user = "tonko@tonkomulder.nl"
+set imap_pass = ""
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed = "+[Gmail]/Drafts"
+set trash = "imaps://imap.gmail.com/[Gmail]/Trash"
+
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
