@@ -1,6 +1,6 @@
 [user]
 	name = Tonko Mulder
-	email = tonko@tonkomulder.nl
+	email = tonko.mulder@buyways.nl
 [core]
   pager = less -r
   autocrlf = input
