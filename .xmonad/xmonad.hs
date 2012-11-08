@@ -95,7 +95,7 @@ tabTheme1 = defaultTheme { decoHeight = 16
                          }
 
 -- workspaces
-workspaces' = ["1-web", "2-editor", "3-mail", "4-other", "5", "6", "7", "8", "9"]
+workspaces' = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 -- layouts
 layoutHook' = tile ||| mtile ||| tab ||| full
@@ -123,8 +123,8 @@ keys' :: XConfig Layout -> M.Map (KeyMask, KeySym) (X ())
 keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- launching and killing programs
     [ ((modMask,               xK_Return), safeSpawn (XMonad.terminal conf) []) 
-    , ((modMask,               xK_p     ), safeSpawn "dmenu_run" []) 
-	, ((modMask .|. shiftMask, xK_p		), safeSpawn "gmrun" [])
+    , ((modMask,               xK_x     ), safeSpawn "dmenu_run" []) 
+	, ((modMask .|. shiftMask, xK_x	), safeSpawn "gmrun" [])
     , ((modMask .|. shiftMask, xK_t     ), safeSpawn "thunderbird" [])
     , ((modMask .|. shiftMask, xK_f     ), safeSpawn "firefox" [])
     , ((modMask .|. shiftMask, xK_c     ), kill)
