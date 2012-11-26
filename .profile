@@ -18,7 +18,7 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+  PATH="$HOME/bin:/home/tonko/.gem/ruby/1.9.1/bin:$PATH"
 fi
 
 alias ls='ls --color=auto -F --group-directories-first'
@@ -29,3 +29,4 @@ alias la='a -lh'
 eval `keychain --eval --agents ssh id_dsa`
 alias bob="php artisan bob::build"
 export PATH="$PATH:/home/tonko/.gem/ruby/1.9.1/bin"
+/home/tonko/.gem/ruby/1.9.1/bin
