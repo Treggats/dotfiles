@@ -29,4 +29,5 @@ alias la='a -lh'
 eval `keychain --eval --agents ssh id_dsa`
 alias bob="php artisan bob::build"
 export PATH="$PATH:/home/tonko/.gem/ruby/1.9.1/bin"
-/home/tonko/.gem/ruby/1.9.1/bin
+
+export svn_url="svn+ssh://svn.buyways.nl/export/svn"
