@@ -1,0 +1,4 @@
+Backup/
+*.cache
+*.sublime_session
+*.last-run
