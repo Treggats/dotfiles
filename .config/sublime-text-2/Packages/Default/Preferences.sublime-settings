@@ -43,10 +43,10 @@
     "spell_check": false,
 
     // The number of spaces a tab is considered equal to
-    "tab_size": 2,
+    "tab_size": 4,
 
     // Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": false,
+    "translate_tabs_to_spaces": true,
 
     // If translate_tabs_to_spaces is true, use_tab_stops will make tab and
     // backspace insert/delete up to the next tabstop
@@ -64,7 +64,7 @@
 
     // Adds whitespace up to the first open bracket when indenting. Requires
     // auto_indent to be enabled.
-    "indent_to_bracket": false,
+    "indent_to_bracket": true,
 
     // Trims white space added by auto_indent when moving the caret off the
     // line.
@@ -169,7 +169,7 @@
 
     // Set to true to automatically save files when switching to a different file
     // or application
-    "save_on_focus_lost": false,
+    "save_on_focus_lost": true,
 
     // The encoding to use when the encoding can't be determined automatically.
     // ASCII, UTF-8 and UTF-16 encodings will be automatically detected.
