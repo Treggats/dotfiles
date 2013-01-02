@@ -18,15 +18,19 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-  PATH="$PATH:$HOME/bin"
+  PATH=$PATH:$HOME/bin
 fi
 
 if [ -d "/opt/idea/bin" ] ; then
-  PATH="$PATH:/opt/idea/bin"
+  PATH=$PATH:/opt/idea/bin
+fi
+
+if [ -d "/opt/java/bin" ] ; then
+  PATH=$PATH:/opt/java/bin
 fi
 
 if [ -d "$HOME/.gem/ruby/1.9.1/bin" ] ; then
-  PATH="$PATH:$HOME/.gem/ruby/1.9.1/bin"
+  PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
 fi
 
 eval `keychain --eval --agents ssh id_dsa`
