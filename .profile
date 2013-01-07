@@ -18,19 +18,23 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-  PATH=$PATH:$HOME/bin
+  export PATH=$PATH:$HOME/bin
 fi
 
 if [ -d "/opt/idea/bin" ] ; then
-  PATH=$PATH:/opt/idea/bin
+  export PATH=$PATH:/opt/idea/bin
 fi
 
 if [ -d "/opt/java/bin" ] ; then
-  PATH=$PATH:/opt/java/bin
+  export PATH=$PATH:/opt/java/bin
 fi
 
 if [ -d "$HOME/.gem/ruby/1.9.1/bin" ] ; then
-  PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
+  export PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
+fi
+
+if [ -d "/opt/nginx" ] ; then
+  export PATH=$PATH:/opt/nginx/sbin
 fi
 
 if [ -d "$HOME/Downloads/apache-nutch-1.6" ] ; then
