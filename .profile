@@ -33,6 +33,14 @@ if [ -d "$HOME/.gem/ruby/1.9.1/bin" ] ; then
   PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
 fi
 
+if [ -d "$HOME/Downloads/apache-nutch-1.6" ] ; then
+  export NUTCH_RUNTIME_HOME=$HOME/Downloads/apache-nutch-1.6
+fi
+
+if [ -d "$HOME/Downloads/apache-solr-4.0.0" ] ; then
+  export APACHE_SOLR_HOME=$HOME/Downloads/apache-solr-4.0.0
+fi
+
 eval `keychain --eval --agents ssh id_dsa`
 
 alias ls='ls --color=auto -F --group-directories-first'
