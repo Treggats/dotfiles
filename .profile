@@ -56,3 +56,4 @@ pretty_cat() { pygmentize -f terminal "$1" | cat }
 alias pcat=pretty_cat
 pretty_less() { pygmentize -f terminal "$1" | less -R }
 alias pless=pretty_less
+alias gen_passwd="cat /dev/urandom| tr -dc a-zA-Z0-9 | fold -w 10| head -n 4"
