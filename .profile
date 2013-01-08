@@ -52,5 +52,7 @@ alias a='ls -A'
 alias ll='ls -lh'
 alias la='a -lh'
 
-
-export svn_url="svn+ssh://svn.buyways.nl/export/svn"
+pretty_cat() { pygmentize -f terminal "$1" | cat }
+alias pcat=pretty_cat
+pretty_less() { pygmentize -f terminal "$1" | less -R }
+alias pless=pretty_less
