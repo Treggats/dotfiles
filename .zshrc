@@ -20,8 +20,9 @@ export EDITOR='vim'
 
 source ~/.profile
 
-export PROJECT_HOME=$WORKON_HOME
 source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME="/home/tonko/projects"
+export PROJECT_HOME=$WORKON_HOME
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
