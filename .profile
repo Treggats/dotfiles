@@ -45,7 +45,7 @@ if [ -d "$HOME/Downloads/apache-solr-4.0.0" ] ; then
   export APACHE_SOLR_HOME=$HOME/Downloads/apache-solr-4.0.0
 fi
 
-eval `keychain --eval --agents`
+eval `keychain --eval --agents gpg,ssh id_dsa`
 
 alias ls='ls --color=auto -F --group-directories-first'
 alias a='ls -A'
