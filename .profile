@@ -37,6 +37,10 @@ if [ -d "/opt/nginx" ] ; then
   export PATH=$PATH:/opt/nginx/sbin
 fi
 
+if [ -d "$HOME/Downloads/hadoop-1.0.4" ] ; then
+  export HADOOP_HOME=$HOME/Downloads/hadoop-1.0.4
+fi
+
 if [ -d "$HOME/Downloads/apache-nutch-1.6" ] ; then
   export NUTCH_RUNTIME_HOME=$HOME/Downloads/apache-nutch-1.6
 fi
