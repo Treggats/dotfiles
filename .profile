@@ -37,16 +37,19 @@ if [ -d "/opt/nginx" ] ; then
   export PATH=$PATH:/opt/nginx/sbin
 fi
 
-if [ -d "$HOME/Downloads/hadoop-1.0.4" ] ; then
-  export HADOOP_HOME=$HOME/Downloads/hadoop-1.0.4
+if [ -d "/opt/hadoop-1.0.4" ] ; then
+  export HADOOP_HOME=/opt/hadoop-1.0.4
 fi
 
-if [ -d "$HOME/Downloads/apache-nutch-1.6" ] ; then
-  export NUTCH_RUNTIME_HOME=$HOME/Downloads/apache-nutch-1.6
+if [ -d "/opt/apache-nutch-1.6" ] ; then
+  export NUTCH_RUNTIME_HOME=/opt/apache-nutch-1.6
 fi
 
-if [ -d "$HOME/Downloads/apache-solr-4.0.0" ] ; then
-  export APACHE_SOLR_HOME=$HOME/Downloads/apache-solr-4.0.0
+if [ -d "/opt/apache-solr-4.0.0" ] ; then
+  export SOLR4_HOME=/opt/apache-solr-4.0.0
+fi
+if [ -d "/opt/apache-solr-3.6.2" ] ; then
+  export SOLR3_HOME=/opt/apache-solr-3.6.2
 fi
 
 eval `keychain --eval --agents gpg,ssh id_dsa`
