@@ -1,52 +1,48 @@
 [user]
-	name = Tonko Mulder
-	email = tonko@tonkomulder.nl
+  name = Tonko Mulder
+  email = tonko@tonkomulder.nl
+
 [core]
-  pager = less -r
+  pager = less -FRSX
   autocrlf = input
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [color]
   branch = auto
   diff = auto
   status = auto
-  ui = auto
-
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
-
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+  ui = true
+  pager = true
+  interactive = auto
 
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+  added = green
+  changed = yellow
+  untracked = red
 
 [diff]
-	tool = meld
+  tool = meld
+
+[difftool]
+  prompt = false
 
 [alias]
-	st = status
-	b = branch
-	ba = branch -a
-	co = checkout
-	l = log --decorate --oneline
-	spull = svn rebase
-	spush = svn dcommit
-	ll = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
-    ci = commit
-  	ls = "!cd ${GIT_PREFIX:-`pwd`}; printf \"# HEAD: \"; git log --oneline | head -n1; git status"
-	ignored = !git ls-files -v | grep "^[[:lower:]]"
+  st = status
+  b = branch
+  ba = branch -a
+  co = checkout
+  l = log --decorate --oneline
+  spull = svn rebase
+  spush = svn dcommit
+  ll = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
+  ci = commit
+  ls = "!cd ${GIT_PREFIX:-`pwd`}; printf \"# HEAD: \"; git log --oneline | head -n1; git status"
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
 
 [giggle]
-	main-window-maximized = true
-	main-window-geometry = 0x0+0+0
-	history-view-vpane-position = 191
-	file-view-vpane-position = 916
-	main-window-view = HistoryView
-	file-view-hpane-position = 317
+  main-window-maximized = true
+  main-window-geometry = 0x0+0+0
+  history-view-vpane-position = 191
+  file-view-vpane-position = 916
+  main-window-view = HistoryView
+  file-view-hpane-position = 317
