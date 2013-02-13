@@ -7,3 +7,9 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "/home/tonko/dotfiles/.vim/bundle/vundle"]
+	path = /home/tonko/dotfiles/.vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
