@@ -29,8 +29,8 @@ if [ -d "/opt/java/bin" ] ; then
   export PATH=$PATH:/opt/java/bin
 fi
 
-if [ -d "$HOME/.gem/ruby/1.9.1/bin" ] ; then
-  export PATH=$PATH:$HOME/.gem/ruby/1.9.1/bin
+if [ -d "$(ruby -rubygems -e "puts Gem.user_dir")/bin" ] ; then
+  export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
 fi
 
 if [ -d "/opt/nginx" ] ; then
@@ -51,6 +51,7 @@ fi
 if [ -d "/opt/apache-solr-3.6.2" ] ; then
   export SOLR3_HOME=/opt/apache-solr-3.6.2
 fi
+
 
 eval `keychain --eval --agents gpg,ssh id_dsa`
 
