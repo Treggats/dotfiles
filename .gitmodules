@@ -13,3 +13,12 @@
 [submodule ".vim/bundle/vundle"]
 	path = .vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
+[submodule ".vim/bundle/ctrlp"]
+	path = .vim/bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule ".vim/bundle/powerline"]
+	path = .vim/bundle/powerline
+	url = git@github.com:Lokaltog/vim-powerline.git
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
