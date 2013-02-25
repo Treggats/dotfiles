@@ -23,3 +23,10 @@ autocmd FileType html set ft=htmldjango.html " For SnipMate
 
 call pathogen#infect()
 
+nmap j gj
+nmap k gk
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+nmap \q :nohlsearch<CR>
