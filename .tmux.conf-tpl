@@ -1,9 +1,9 @@
 # Remap prefix to Control + a
 set-window-option -g utf8 on
-set -g prefix C-a
+set -g prefix C-b
 unbind %
 unbind C-b
-bind C-a send-prefix
+bind C-b send-prefix
 
 # Force a reload of the config file
 unbind r
