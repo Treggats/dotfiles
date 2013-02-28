@@ -12,6 +12,8 @@ filetype plugin indent on "filetype-based indentation
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2 "python-compatible tab setup
 set foldmethod=indent foldlevel=99 "python compat folding
 set number "line numbers
+set encoding=utf-8
+set laststatus=2
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -45,4 +47,4 @@ let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
-
+let g:Powerline_symbols = 'fancy'
