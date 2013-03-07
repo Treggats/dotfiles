@@ -1,3 +1,5 @@
+set encoding=utf-8
+set termencoding=utf-8
 set nocompatible
 filetype off "filetype detection
 
@@ -12,7 +14,6 @@ filetype plugin indent on "filetype-based indentation
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2 "python-compatible tab setup
 set foldmethod=indent foldlevel=99 "python compat folding
 set number "line numbers
-set encoding=utf-8
 set laststatus=2
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
