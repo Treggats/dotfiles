@@ -55,6 +55,9 @@ fi
 
 eval `keychain --eval --agents gpg,ssh id_dsa`
 
+# set vim keybinding
+set -o vi
+
 alias ls='ls --color=auto -F --group-directories-first'
 alias a='ls -A'
 alias ll='ls -lh'
