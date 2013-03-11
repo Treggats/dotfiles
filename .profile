@@ -52,8 +52,12 @@ if [ -d "/opt/apache-solr-3.6.2" ] ; then
   export SOLR3_HOME=/opt/apache-solr-3.6.2
 fi
 
-
-eval `keychain --eval --agents gpg,ssh id_dsa`
+if [ -f "/usr/bin/keychain" ]; then
+  eval `keychain --eval --agents gpg,ssh id_dsa`
+fi
+if [ -f "/usr/bin/fortune" ]; then
+  fortune
+fi
 
 alias ls='ls --color=auto -F --group-directories-first'
 alias a='ls -A'
