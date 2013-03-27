@@ -1,7 +1,7 @@
 set encoding=utf-8
 set termencoding=utf-8
 set nocompatible
-filetype off "filetype detection
+filetype on "filetype detection
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
