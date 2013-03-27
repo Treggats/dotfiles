@@ -14,6 +14,7 @@ compinit
 
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME='candy'
+export DISABLE_AUTO_UPDATE='true'
 source $ZSH/oh-my-zsh.sh
 export PAGER='less -LR'
 export EDITOR='vim'
