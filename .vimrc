@@ -4,10 +4,10 @@ set nocompatible
 filetype on "filetype detection
 
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+"call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'gmarik/vundle'
+"Bundle 'Valloric/YouCompleteMe'
 
 syntax on "syntax
 filetype plugin indent on "filetype-based indentation
