@@ -59,13 +59,13 @@ if [ -f "/usr/bin/fortune" ]; then
   fortune
 fi
 
+export LANG="nl_NL.utf8"
+export LC_LANG="nl_NL.utf8"
+
 alias ls='ls --color=auto -F --group-directories-first'
 alias a='ls -A'
 alias ll='ls -lh'
 alias la='a -lh'
 
-pretty_cat() { pygmentize -f terminal "$1" | cat }
-alias pcat=pretty_cat
-pretty_less() { pygmentize -f terminal "$1" | less -R }
-alias pless=pretty_less
 alias gen_passwd="cat /dev/urandom| tr -dc a-zA-Z0-9 | fold -w 10| head -n 4"
+
