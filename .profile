@@ -52,6 +52,10 @@ if [ -d "/opt/apache-solr-3.6.2" ] ; then
   export SOLR3_HOME=/opt/apache-solr-3.6.2
 fi
 
+if [ -d "/opt/lighttable" ] ; then
+  export PATH=$PATH:/opt/lighttable
+fi
+
 if [ -f "/usr/bin/keychain" ]; then
   eval `keychain --eval --agents gpg,ssh id_dsa`
 fi
