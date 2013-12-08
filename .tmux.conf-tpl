@@ -1,67 +1,40 @@
-# Remap prefix to Control + a
-set-window-option -g utf8 on
-set -g prefix C-b
-unbind %
-unbind C-b
-bind C-b send-prefix
+# Remap prefix to Ctrl-a
+set -g prefix C-a
+bind C-a send-prefix
 
-# Force a reload of the config file
-unbind r
+# Set a Ctrl-a shortcut for reloading
 bind r source-file ~/.tmux.conf
 
-# Set default terminal
-set -g default-terminal "screen-256color"
-set -g history-limit 9000000
+# Rename your terminals
+set -g set-titles on
+set -g set-titles-string '#(whoami)::#h::#(curl ipecho.net/plain;echo)'
 
-# Quick pane cycling
-unbind ^A
-bind ^A select-pane -t :.+
+# Count sessions start at 1
+set -g base-index 1
 
-# Split window
-bind | split-window -h
-bind - split-window -v
+# Set colors
+set-option -g default-terminal "screen-256color"
 
-# Movement
-set-window-option -g mode-keys vi
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
-
-# Solarized Dark
+# Status bar customization
+set -g status-utf8 on
 set -g status-bg black
-set -g status-fg blue
+set -g status-fg white
+set -g status-interval 5
+set -g status-left-length 90
+set -g status-right-length 60
+set -g status-left "#[fg=Green]#(whoami)#[fg=white]::#[fg=blue]#(hostname -s)#[fg=white]::#[fg=yellow]#(curl ipecho.net/plain;echo)"
+set -g status-justify left
+set -g status-right '#[fg=Cyan]#S #[fg=white]%a %d %b %R'
 
-# Solarized Light
-set -g status-bg black
-set -g status-fg yellow
+# Use vim bindings
+setw -g mode-keys vi
 
-set-option -g pane-active-border-fg green
-set-option -g pane-active-border-bg black
-set-option -g pane-border-fg white
-set-option -g pane-border-bg black
-
-set-window-option -g window-status-fg yellow
-set-window-option -g window-status-bg black
-set-window-option -g window-status-attr dim
-set-window-option -g window-status-current-fg green
-set-window-option -g window-status-current-bg default
-set-window-option -g window-status-current-attr bright
-
-# hostname color
-set -g status-left '#[fg=green]#H#[fg=red]:#[fg=white]#S #[fg=green]][#[default]'
-
-# right status and color
-set -g status-right '#[fg=gray,bright]#(whoami) | #[fg=green]%A Week %V %T'
-
-# Fix tmux copy bug
-#set-option -g default-command "reattach-to-user-namespace -l $(basename $SHELL)"
-
-# Set window notifications
-set -g visual-activity on
-
-# Automatically set window title
-setw -g automatic-rename
-
-# Load local configuration
-source-file ~/.tmux.conf.local
+# Remap window navigation to vim
+unbind-key j
+bind-key j select-pane -D
+unbind-key k
+bind-key k select-pane -U
+unbind-key h
+bind-key h select-pane -L
+unbind-key l
+bind-key l select-pane -R
