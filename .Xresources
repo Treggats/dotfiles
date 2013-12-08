@@ -19,7 +19,7 @@ URxvt.shading: 20
 
 URxvt.perl-ext-common: default,matcher
 URxvt.perl-ext: default,url-select
-URxvt.urlLauncher: firefox
+URxvt.urlLauncher: chromium
 URxvt.keysym.M-u: perl:url-select:select_next
 !URxvt.matcher.rend.0: Uline Bold fg7
 URxvt.matcher.button: 1
@@ -43,7 +43,7 @@ xpdf*enableFreetype:    yes
 xpdf*antialias:         yes
 xpdf*foreground:        black
 xpdf*background:        white
-xpdf*urlCommand:        /usr/bin/firefox %s
+xpdf*urlCommand:        /usr/bin/chromium %s
 
 ! x11-ssh-askpass ------------------------------------------------------------
 
