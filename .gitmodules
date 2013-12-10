@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/syntastic"]
 	path = .vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+[submodule "vimconf"]
+	path = vimconf
+	url = https://github.com/timss/vimconf.git
