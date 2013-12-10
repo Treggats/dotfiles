@@ -1,56 +1,74 @@
+"remap the escape key
+inoremap jk <ESC>
+
+"remap the leader key
+let mapleader = ","
+
+syntax on
 set encoding=utf-8
-set termencoding=utf-8
-set nocompatible
-filetype on "filetype detection
 
-set rtp+=~/.vim/bundle/vundle
-"call vundle#rc()
+"set tab indent
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
-"Bundle 'gmarik/vundle'
-"Bundle 'Valloric/YouCompleteMe'
+set autoindent
 
-syntax on "syntax
-filetype plugin indent on "filetype-based indentation
-set tabstop=2 expandtab shiftwidth=2 softtabstop=2 "python-compatible tab setup
-set foldmethod=indent foldlevel=99 "python compat folding
-set number "line numbers
-set laststatus=2
+"easier split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"options for vundle
+set nocompatible " be iMproved
+filetype off " required
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
 
-autocmd FileType python set ft=python.django " For SnipMate
-autocmd FileType html set ft=htmldjango.html " For SnipMate
+" Bundles
+"vim-tmux navigation
+Bundle 'christoomey/vim-tmux-navigator'
 
-call pathogen#infect()
+"shows syntax errors on several types of files
+Bundle 'scrooloose/syntastic'
 
-nmap j gj
-nmap k gk
-nmap \q :nohlsearch<CR>
-nmap \l :setlocal number!<CR>
-nmap \o :set paste!<CR>
-nmap <C-n> :bNext<CR>
-nmap <C-p> :bprevious<CR>
-nmap ; :CtrlPBuffer<CR>
-nmap \e :NERDTreeToggle<CR>
+" Tab to indent or autocomplete depending on context
+Bundle 'ervandew/supertab'
 
-nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+" Syntax for nginx
+Bundle 'mutewinter/nginx.vim'
 
-set incsearch
-set ignorecase
-set smartcase
-set hlsearch
+" Makes css colors show up as their actual colors, works better with CSApprox or macvim
+Bundle 'ap/vim-css-color'
 
-let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|__init__\.py'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_dotfiles = 0
-let g:ctrlp_switch_buffer = 0
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Powerline
+" "
+" " The ultimate vim statusline utility
+" "
+" " You'll need a powerline patched font.
+" " You should probably use inconsolata-g (included in fonts directory)
+" "
+" " If not, you can patch your own.
+" " See: https://github.com/Lokaltog/vim-powerline/tree/develop/fontpatcher
+" " You'll probably need this too:
+" https://github.com/jenius/Fontforge-Installer
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'Lokaltog/vim-powerline'
+
 let g:Powerline_symbols = 'fancy'
+let g:Powerline_stl_path_style = 'relative'
+"call Pl#Theme#RemoveSegment('fugitive:branch')
+"call Pl#Theme#RemoveSegment('fileformat')
+"call Pl#Theme#RemoveSegment('fileencoding')
+"call Pl#Theme#RemoveSegment('scrollpercent')
+autocmd FocusGained * call Pl#UpdateStatusline(1)
+autocmd FocusLost * call Pl#UpdateStatusline(0)
+
+filetype plugin indent on
+
+execute pathogen#infect()
