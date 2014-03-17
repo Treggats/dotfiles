@@ -1,7 +1,7 @@
-.xmonad/xmonad-*
-.xmonad/xmonad.errors
-.xmonad/xmonad.hi
-.xmonad/xmonad.o
-.xinitrc
-.muttrc
+xmonad/xmonad-*
+xmonad/xmonad.errors
+xmonad/xmonad.hi
+xmonad/xmonad.o
+xinitrc
+muttrc
 .gitconfig
