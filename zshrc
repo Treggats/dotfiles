@@ -1,26 +1,52 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt appendhistory autocd nomatch notify
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/tonko/.zshrc'
+# load our own completion functions
+fpath=(~/.zsh/completion $fpath)
 
-autoload -Uz compinit
+# completion
+autoload -U compinit
 compinit
-# End of lines added by compinstall
 
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME='candy'
-export DISABLE_AUTO_UPDATE='true'
-source $ZSH/oh-my-zsh.sh
-export PAGER='less -LR'
-export EDITOR='vim'
+for function in ~/.zsh/functions/*; do
+  source $function
+done
 
-source ~/.profile
+# history settings
+setopt histignoredups
+SAVEHIST=4096
+HISTSIZE=4096
 
-source /usr/bin/virtualenvwrapper.sh
-export PIP_RESPECT_VIRTUALENV=true
+# awesome cd movements from zshkit
+setopt autocd autopushd pushdminus pushdsilent pushdtohome cdablevars
+DIRSTACKSIZE=5
 
+# Try to correct command line spelling
+setopt correct correctall
+
+# Enable extended globbing
+setopt extendedglob
+
+# Allow [ or ] whereever you want
+unsetopt nomatch
+
+# vi mode
+bindkey -v
+bindkey "^F" vi-cmd-mode
+bindkey jj vi-cmd-mode
+
+# handy keybindings
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+bindkey "^R" history-incremental-search-backward
+bindkey "^P" history-search-backward
+bindkey "^Y" accept-and-hold
+bindkey "^N" insert-last-word
+bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+# use vim as the visual editor
+export VISUAL=vim
+export EDITOR=$VISUAL
+
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
+
+# Local config
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
