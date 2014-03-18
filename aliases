@@ -1,0 +1,17 @@
+# Unix
+alias ls='ls --color=auto -F --group-directories-first'
+alias a='ls -A'
+alias ll='ls -lh'
+alias la='a -lh'
+
+alias -g G='| grep'
+alias -g M='| less'
+alias -g L='| wc -l'
+
+# Git
+
+alias e="$EDITOR"
+alias v="$VISUAL"
+
+# Include custom alias
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
