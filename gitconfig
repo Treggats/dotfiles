@@ -6,12 +6,13 @@
   pager = less -FRSX
   autocrlf = input
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = ~/.gitignore
 
 [color]
   branch = auto
   diff = auto
   status = auto
-  ui = true
+  ui = auto
   pager = true
   interactive = auto
 
@@ -20,29 +21,36 @@
   changed = yellow
   untracked = red
 
+[commit]
+  template = ~/.gitmessage
+
 [diff]
   tool = meld
 
 [difftool]
   prompt = false
 
+[merge]
+  ff = only
+
+[include]
+  path = .gitconfig.local
+
 [alias]
-  st = status
-  b = branch
-  ba = branch -a
   co = checkout
-  l = log --decorate --oneline
-  spull = svn rebase
-  spush = svn dcommit
-  ll = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
+  ca = commit --amend
   ci = commit
+  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
+  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+  merge-branch = !git checkout master && git merge @{-1}
+  l = log --decorate --oneline
+  ll = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
   ls = "!cd ${GIT_PREFIX:-`pwd`}; printf \"# HEAD: \"; git log --oneline | head -n1; git status"
   ignored = !git ls-files -v | grep "^[[:lower:]]"
+  st = status
+  spull = svn rebase
+  spush = svn dcommit
+  up = !git fetch origin && git rebase origin/master
 
-[giggle]
-  main-window-maximized = true
-  main-window-geometry = 0x0+0+0
-  history-view-vpane-position = 191
-  file-view-vpane-position = 916
-  main-window-view = HistoryView
-  file-view-hpane-position = 317
+[push]
+    default = current
