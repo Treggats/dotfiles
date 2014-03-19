@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# add oh-my-zsh
+if [ ! -e $HOME/.oh-my-zsh ]; then
+  git clone https://github.com/robbyrussell/oh-my-zsh.git
+fi
+
+# add vundle to your bundle
 if [ ! -e $HOME/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
 fi
