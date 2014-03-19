@@ -24,4 +24,6 @@ export PATH="$HOME/.bin:$PATH"
 
 # Local config
 [[ -f ~/.zlogin.local ]] && source ~/.zlogin.local
+# load exports
+[[ -f ~/.exports ]] && source ~/.exports
 

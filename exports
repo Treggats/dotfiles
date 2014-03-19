@@ -1,0 +1,26 @@
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+  export PATH=$PATH:$HOME/bin
+fi
+
+# set path to intelliJ idea
+if [ -d "/opt/idea/bin" ] ; then
+  export PATH=$PATH:/opt/idea/bin
+fi
+
+# put ruby gems in the PATH
+if [ -d "$(ruby -rubygems -e "puts Gem.user_dir")/bin" ] ; then
+  export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
+fi
+
+# add lighttable to the PATH
+if [ -d "/opt/lighttable" ] ; then
+  export PATH=$PATH:/opt/lighttable
+fi
+
+# export language setting
+export LANG="nl_NL.utf8"
+export LC_LANG="nl_NL.utf8"
+
+[[ -f ~/.exports.local ]] && source ~/.exports.local
+
