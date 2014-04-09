@@ -51,6 +51,7 @@
   spull = svn rebase
   spush = svn dcommit
   up = !git fetch origin && git rebase origin/master
+  pu = !git fetch origin && git fetch upstream && git rebase upstream/master
 
 [push]
     default = current
