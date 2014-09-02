@@ -10,3 +10,6 @@
 [submodule "vimconf"]
 	path = vimconf
 	url = https://github.com/timss/vimconf.git
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
