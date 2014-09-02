@@ -37,6 +37,7 @@
   path = .gitconfig.local
 
 [alias]
+  a  = add
   co = checkout
   ca = commit --amend
   ci = commit
@@ -55,3 +56,5 @@
 
 [push]
     default = current
+[hub]
+	protocol = ssh
