@@ -57,4 +57,4 @@
 [push]
     default = current
 [hub]
-	protocol = ssh
+  protocol = ssh
