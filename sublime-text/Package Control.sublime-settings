@@ -1,0 +1,23 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Djaneiro",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"Package Control",
+		"requirementstxt",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter-pep8",
+		"SummitLinter",
+		"Theme - Brogrammer",
+		"Theme - Monokai",
+		"Theme - Numix"
+	]
+}
