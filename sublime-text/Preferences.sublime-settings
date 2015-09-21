@@ -12,7 +12,16 @@
 	[
 		"*.DS_Store",
 		"*.pyc",
-		"*.git"
+		"*.git",
+		"*.aux",
+		"*.log",
+		"*.pdf",
+		"*.toc",
+		"*.out",
+		"*.lof",
+		"*.lot",
+		"*.run.xml",
+		"*-blx.bib"
 	],
 	"find_selected_text": true,
 	"fold_buttons": false,
