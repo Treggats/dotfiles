@@ -4,7 +4,7 @@
 	"auto_match_enabled": true,
 	"bold_folder_labels": true,
 	"caret_style": "solid",
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
 	"detect_indentation": true,
 	"draw_indent_guides": true,
 	"ensure_newline_at_eof_on_save": true,
@@ -21,7 +21,9 @@
 		"*.lof",
 		"*.lot",
 		"*.run.xml",
-		"*-blx.bib"
+		"*-blx.bib",
+		"*.bbl",
+		"*.blg"
 	],
 	"find_selected_text": true,
 	"fold_buttons": false,
@@ -63,11 +65,10 @@
 	"show_full_path": true,
 	"show_minimap": false,
 	"tab_size": 2,
-	"theme": "Brogrammer.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
-	"vintage_start_in_command_mode": false,
+	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
 	"word_wrap": true
 }

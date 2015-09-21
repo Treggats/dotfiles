@@ -6,18 +6,21 @@
 	"installed_packages":
 	[
 		"Anaconda",
+		"ColorSchemeSelector",
 		"Djaneiro",
 		"Emmet",
 		"Git",
+		"Git-StatusBar",
 		"GitGutter",
+		"JSON Reindent",
 		"Package Control",
 		"requirementstxt",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-chktex",
 		"SublimeLinter-pep8",
-		"SummitLinter",
-		"Theme - Brogrammer",
-		"Theme - Monokai",
-		"Theme - Numix"
+		"SummitEditor",
+		"SummitLinter"
 	]
 }
