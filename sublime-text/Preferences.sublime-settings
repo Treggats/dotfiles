@@ -60,6 +60,10 @@
 	},
 	"remember_open_files": true,
 	"remember_open_folders": true,
+	"rulers":
+	[
+		70
+	],
 	"save_on_focus_lost": true,
 	"scroll_past_end": false,
 	"show_full_path": true,
@@ -72,6 +76,6 @@
 	"vintage_start_in_command_mode": true,
 	"wide_caret": true,
 	"word_wrap": true,
-	"wrap_width": 80,
-	"rulers": [79],
+	"wrap_lines": 100,
+	"wrap_width": 100
 }
