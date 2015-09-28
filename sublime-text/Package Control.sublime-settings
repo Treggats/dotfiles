@@ -21,6 +21,7 @@
 		"SublimeLinter-chktex",
 		"SublimeLinter-pep8",
 		"SummitEditor",
-		"SummitLinter"
+		"SummitLinter",
+		"Wrap Plus"
 	]
 }
