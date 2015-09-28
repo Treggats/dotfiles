@@ -20,6 +20,7 @@
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-chktex",
+		"SublimeLinter-flake8",
 		"SublimeLinter-pep8",
 		"SummitEditor",
 		"SummitLinter",
