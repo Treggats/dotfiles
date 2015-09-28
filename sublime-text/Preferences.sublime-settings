@@ -31,7 +31,7 @@
 	[
 		".git"
 	],
-	"font_face": "Menlo",
+	"font_face": "Terminus",
 	"font_options":
 	[
 		"no_round"
@@ -65,6 +65,7 @@
 	"show_full_path": true,
 	"show_minimap": false,
 	"tab_size": 4,
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_simple_full_screen": true,
