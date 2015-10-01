@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+
+from time import sleep
+from subprocess import Popen as run
+import sys
+
+
+SLEEP_TIME = 5
+while True:
+    try:
+        run('clear', shell=True)
+        run('git -c color.ui=always status -sb', shell=True)
+        sleep(SLEEP_TIME)
+    except (KeyboardInterrupt, SystemExit):
+        raise sys.exit()
+    except:
+        print("I made a boo boo")
