@@ -1,0 +1,87 @@
+@-moz-document domain(twitter.com) {
+/*      MINIMALIST TWITTER MOD (by @levelsio)
+	version 2015-09-25-A
+        
+        use Stylebot Chrome extension to load this by default:
+        https://chrome.google.com/webstore/detail/stylebot/oiaejidbmkiecgbjeifoejpgmdaleoha?hl=en
+*/
+
+/* Removes all borders in layout */
+
+* {
+    border: none ;
+}
+
+/* Makes all human avatars round */
+
+.DashboardProfileCard-avatarLink, .js-action-profile-avatar {
+    border-radius: 100% ;
+}
+
+/* Hide useless modules like footer and who to follow */
+
+.top-timeline-tweet-box-user-image, .nav>li>a .text, .bird-topbar-etched, .module.DashboardProfileCard, .dashboard-profile-prompt, .js-view-details, .module.trends, .module.Footer, .wtf-module {
+    display: none ;
+}
+
+/* Hide notifications of favorited, followed and list members added */
+
+/* Highlight expanded reply chain */
+
+.top-timeline-tweetbox .timeline-tweet-box .tweet-form.condensed .tweet-box {
+    color: #fff;
+}
+
+.home-tweet-box {
+    background: none;
+}
+
+.top-timeline-tweetbox .timeline-tweet-box .t1-form {
+    margin-left: 0;
+}
+
+.tweet-user {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.top-timeline-tweetbox .tweet-user {
+    padding-bottom: 0;
+}
+
+.dashboard {
+    width: 100%;
+    margin-bottom: 0.5em;
+    display: none;
+}
+
+.module .list-link .Icon--caretRight {
+    display: none;
+}
+
+.content-main {
+    width: 100% ;
+}
+
+.wrapper, .wrapper-narrow, .wrapper-permalink {
+    width: 600px ;
+}
+
+.in-reply-to>ol>li, li.stream-item, .tweets-wrapper li, .recent-tweets li {
+    margin-bottom: 1em ;
+    border-radius: 6px;
+    margin-top: 1em ;
+}
+
+.ProfileHeading-content {
+    border-radius: 6px;
+}
+
+.global-nav .form-search {
+    width: 625px;
+}
+
+.ProfileHeading {
+    margin-bottom: -0.5em;
+}
+}
