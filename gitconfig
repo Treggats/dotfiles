@@ -33,15 +33,16 @@
 [alias]
   a  = add
   co = checkout
-  ca = commit --amend
-  ci = commit -S
+  ca = commit --amend -S -s
+  ci = commit -S -s
   create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
   delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
   merge-branch = !git checkout master && git merge @{-1}
-  l = log --pretty=format:'%h %G? %aN  %s'
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
   ll = log --graph --decorate --oneline 
-  lll = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
+  lll = log --graph --date-order -C -M --pretty=format:'<%h> %Cgreen%d%Creset %s' --all --date=short
   ls = "!cd ${GIT_PREFIX:-`pwd`}; printf \"# HEAD: \"; git log --oneline | head -n1; git status"
+  ignore = !git update-index --assume-unchanged
   ignored = !git ls-files -v | grep "^[[:lower:]]"
   st = status
   up = !git fetch origin && git rebase origin/master
