@@ -1,7 +1,19 @@
 #!/usr/bin/env python
 
-from subprocess import Popen as run
+from subprocess import PIPE, Popen as run
 
 
-run('tmux new -d -s default', shell=True)
-run('tmux new -d -s remote', shell=True)
+tmuxes = ("default", "remote")
+output = run(["tmux", "ls"], stdout=PIPE).stdout.read()
+out = output.split("\n")
+sessions = []
+for item in out:
+    session = item.split(": ")[0]
+    if session != "":
+        sessions.append(session)
+
+for tm in tmuxes:
+    if tm in sessions:
+        print "Found session: {name}".format(name=tm)
+    else:
+        run('tmux new -d -s {name}'.format(name=tm), shell=True)
