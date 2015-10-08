@@ -12,6 +12,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
+set number        " show line numbers
 
 "autocmd BufWritePost *.tex !make all
 filetype plugin indent on
@@ -19,21 +20,23 @@ filetype plugin on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
+" For all text files set 'textwidth' to 80 characters.
+autocmd BufNewFile,BufRead * set textwidth=100 tabstop=4 colorcolumn=100
+autocmd BufNewFile,BufRead *.tex set textwidth=100 tabstop=4 colorcolumn=100
+autocmd FileType python set textwidth=80 tabstop =4 colorcolumn=80
+
 " set wrapping options
 set wrap
 set linebreak
 set nolist " list disables linebreak
-set textwidth=100
 set wrapmargin=0
 set formatoptions+=t
-set colorcolumn=100
+set colorcolumn+=1
 highlight ColorColumn ctermbg=DarkGray
 
 map <F8> :!make build<CR>
 map <F9> :!make all<CR>
 
-" For all text files set 'textwidth' to 80 characters.
-autocmd FileType text setlocal textwidth=80
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it for commit messages, when the position is invalid, or when
