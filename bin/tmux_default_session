@@ -5,7 +5,7 @@ from subprocess import PIPE, Popen as run
 
 tmuxes = ("default", "remote")
 output = run(["tmux", "ls"], stdout=PIPE).stdout.read()
-out = output.split("\n")
+out = output.decode().split("\n")
 sessions = []
 for item in out:
     session = item.split(": ")[0]
@@ -14,6 +14,6 @@ for item in out:
 
 for tm in tmuxes:
     if tm in sessions:
-        print "Found session: {name}".format(name=tm)
+        print ("Found session: {name}".format(name=tm))
     else:
         run('tmux new -d -s {name}'.format(name=tm), shell=True)
