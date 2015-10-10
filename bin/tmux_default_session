@@ -4,13 +4,15 @@ from subprocess import PIPE, Popen as run
 
 
 tmuxes = ("default", "remote")
-output = run(["tmux", "ls"], stdout=PIPE).stdout.read()
-out = output.decode().split("\n")
 sessions = []
-for item in out:
-    session = item.split(": ")[0]
-    if session != "":
-        sessions.append(session)
+output = run(["pidof", "tmux"], stdout=PIPE).stdout.read()
+if output:
+    output = run(["tmux", "ls"], stdout=PIPE).stdout.read()
+    out = output.decode().split("\n")
+    for item in out:
+        session = item.split(": ")[0]
+        if session != "":
+            sessions.append(session)
 
 for tm in tmuxes:
     if tm in sessions:
