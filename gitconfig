@@ -30,6 +30,9 @@
 [merge]
   ff = only
 
+[include]
+  path = .gitconfig.local
+
 [alias]
   a  = add
   co = checkout
