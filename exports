@@ -14,8 +14,8 @@ if [ -d "$(ruby -rubygems -e "puts Gem.user_dir")/bin" ] ; then
 fi
 
 # export language setting
-export LANG="en_GB.utf8"
-export LC_LANG="en_GB.utf8"
+export LANG="en_US.UTF-8"
+export LC_LANG="en_US.UTF-8"
 
 [[ -f ~/.exports.local ]] && source ~/.exports.local
 
