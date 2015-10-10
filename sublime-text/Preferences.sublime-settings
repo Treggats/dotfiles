@@ -22,7 +22,6 @@
 	"dictionary": "Packages/Language - English/en_GB.dic",
 	"draw_indent_guides": true,
 	"ensure_newline_at_eof_on_save": true,
-        "show_panel_on_build": false,
 	"file_exclude_patterns":
 	[
 		"*.DS_Store",
@@ -78,6 +77,7 @@
 		"side_bar_visible": true,
 		"status_bar_visible": true
 	},
+	"overlay_scroll_bars": "enabled",
 	"remember_open_files": true,
 	"remember_open_folders": true,
 	"rulers":
@@ -88,7 +88,7 @@
 	"scroll_past_end": false,
 	"show_full_path": true,
 	"show_minimap": false,
-	"overlay_scroll_bars": "enabled",
+	"show_panel_on_build": false,
 	"tab_size": 4,
 	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
