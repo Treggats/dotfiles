@@ -1,71 +1,185 @@
-" Leader
-let mapleader = " "
+let mapleader = "\<Space>"
+let maplocalleader = ","
 
-set backspace=2   " Backspace deletes like most programs in insert mode
-set nocompatible  " Use Vim settings, rather then Vi settings
-set nobackup
-set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-set number        " show line numbers
+let g:python_host_skip_check=1
+let g:loaded_python3_provider=1
 
-"autocmd BufWritePost *.tex !make all
-filetype plugin indent on
-filetype plugin on
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
+source ~/.plugrc
 
-" For all text files set 'textwidth' to 80 characters.
-autocmd BufNewFile,BufRead * set textwidth=100 tabstop=4 colorcolumn=100
-autocmd BufNewFile,BufRead *.tex set textwidth=100 tabstop=4 colorcolumn=100
-autocmd FileType python set textwidth=80 tabstop =4 colorcolumn=80
+call plug#begin()
 
-" set wrapping options
-set wrap
-set linebreak
-set nolist " list disables linebreak
-set wrapmargin=0
-set formatoptions+=t
-set colorcolumn+=1
-highlight ColorColumn ctermbg=DarkGray
+Plug 'sheerun/vimrc'
+Plug 'sheerun/vim-polyglot'
+Plug 'sjl/vitality.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'grassdog/tagman.vim'
 
-map <F8> :!make build<CR>
-map <F9> :!make all<CR>
+" Really nice prompt
+Plug 'bling/vim-airline'
+let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
+
+" Press v over and over again to expand selection
+Plug 'terryma/vim-expand-region'
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Awesome autocompletion
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
+
+" Lightning fast :Ag searcher
+Plug 'rking/ag.vim'
+
+" Ruby extensions
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-rake', { 'for': 'ruby' }
+Plug 'kana/vim-textobj-user', { 'for': 'ruby' }
+" var, vir
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-unimpaired'
+
+" Allow to :Rename files
+Plug 'danro/rename.vim'
+
+" Automatically find root project directory
+Plug 'airblade/vim-rooter'
+let g:rooter_disable_map = 1
+let g:rooter_silent_chdir = 1
+
+" Expand / wrap hashes etc.
+Plug 'AndrewRadev/splitjoin.vim'
+nmap sj :SplitjoinSplit<cr>
+nmap sk :SplitjoinJoin<cr>
 
 
-" When editing a file, always jump to the last known cursor position.
-" Don't do it for commit messages, when the position is invalid, or when
-" inside an event handler (happens when dropping a file on gvim).
-autocmd BufReadPost *
-  \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal g`\"" |
-  \ endif
+" Plug 'JuliaLang/julia-vim', { 'for': 'julia' }
+Plug 'jnwhiteh/vim-golang', { 'for': 'go' }
+Plug 'Blackrush/vim-gocode', { 'for': 'go' }
+Plug 'moll/vim-node', { 'for': 'javascript' }
 
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
+Plug 'bitc/vim-hdevtools', { 'for': 'haskell' }
+au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+Plug 'derekelkins/agda-vim', { 'for': 'agda' }
+imap <buffer> \forall ∀
+imap <buffer> \to →
+imap <buffer> \lambda λ
+imap <buffer> \Sigma Σ
+imap <buffer> \exists ∃
+imap <buffer> \equiv ≡
+imap <buffer> \then ⇒
+imap <buffer> \N ℕ
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+" Navitate freely between tmux and vim
+Plug 'christoomey/vim-tmux-navigator'
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+" Run ruby tests with vimux
+Plug 'benmills/vimux'
+Plug 'skalnik/vim-vroom'
+Plug 'tpope/vim-dispatch'
+let g:vroom_use_vimux = 1
+let g:vroom_write_all = 1
+let g:vroom_use_binstubs = 1
+let g:vroom_use_colors = 0
+let g:vroom_rspec_version = "3.x"
+let g:VimuxHeight = "40"
 
-" Local config
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
+" Nice column aligning with <Enter>
+Plug 'junegunn/vim-easy-align'
+vmap <Enter> <Plug>(EasyAlign)
+nmap <Leader>a <Plug>(EasyAlign)
+
+" I need to revisit those plugins before enabling:
+" Plug 'tpope/vim-projectionist'
+" Plug 'SirVer/ultisnips'
+" let g:UltiSnipsExpandTrigger="<C-j>"
+" let g:UltiSnipsJumpForwardTrigger="<C-j>"
+" let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+" Plug 'honza/vim-snippets'
+" Plug 'xuhdev/SingleCompile'
+" nmap <Leader>d :SCCompile<cr>
+" nmap <Leader>e :SCCompileRun<cr>
+" Vim flow caused some issues with parsing last time
+" Plug 'facebook/vim-flow'
+" Plug 'vim-scripts/SyntaxRange'
+" Plug 'rking/pry-de', { 'rtp': 'vim' }
+" Plug 'AndrewRadev/switch.vim'
+" nmap <Leader><Tab> :Switch<CR>
+
+Plug 'michaeljsmith/vim-indent-object' " ii / ai
+
+" For more reliable indenting and performance
+set foldmethod=indent
+set fillchars="fold: "
+
+" Nice file browsing with -
+Plug 'eiginn/netrw'
+let g:netrw_altfile = 1
+Plug 'tpope/vim-vinegar'
+
+" Set nice 80-characters limiter
+" execute "set colorcolumn=" . join(range(81,335), ',')
+" hi ColorColumn guibg=#262626 ctermbg=235
+
+" Allow for adding github comments
+Plug 'mattn/webapi-vim'
+Plug 'moznion/github-commit-comment.vim'
+command! -nargs=* Comment call github_commit_comment#comment_line(<f-args>)
+
+" Better search tools
+Plug 'vim-scripts/IndexedSearch'
+Plug 'vim-scripts/SmartCase'
+Plug 'vim-scripts/gitignore'
+
+call plug#end()
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+nmap <Leader><Leader> V
+nmap <Leader>b :make<CR>
+nnoremap <Leader><Tab> <C-^>
+nnoremap <Leader>y :!annotate expand('%:p') " what?
+
+nnoremap <Leader>o :FZF<CR>
+
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+nnoremap <CR> G
+nnoremap <BS> gg
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :Sayonara<CR>
+nnoremap <Leader>c :Sayonara!<CR>
+nnoremap <Leader>s :wq<CR>
+nnoremap <Leader>v V
+nnoremap <Leader>g gf
+
+" Remove trailing whitespaces
+nnoremap <silent> <Leader><BS> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:w<CR>
+
+nnoremap H 0
+nnoremap L $
+
+silent! colorscheme wombat256mod
+
+command! -bar Tags if !empty(tagfiles()) | call fzf#run({
+\   'source': "sed '/^\\!/d;s/\t.*//' " . join(tagfiles()) . ' | uniq',
+\   'sink':   'tag',
+\ })
