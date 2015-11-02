@@ -128,7 +128,7 @@
 
 		"linux" : {
 			// See README or third-party documentation
-			"command": ["make", "build"]
+			"command": ["make", "all"]
 		}
 	},
 
