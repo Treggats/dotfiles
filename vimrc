@@ -27,7 +27,12 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " Awesome autocompletion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.py
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 
