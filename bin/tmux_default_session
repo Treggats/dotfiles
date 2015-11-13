@@ -6,10 +6,11 @@ from subprocess import PIPE, Popen as run
 tmuxes = ("default", "remote")
 sessions = []
 output = run(["pidof", "tmux"], stdout=PIPE).stdout.read()
-if output:
+if output is not "":
     output = run(["tmux", "ls"], stdout=PIPE).stdout.read()
-    out = output.decode().split("\n")
-    for item in out:
+    output = output.decode().split("\n")
+    output = filter(None, output)
+    for item in output:
         session = item.split(": ")[0]
         if session != "":
             sessions.append(session)
