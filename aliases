@@ -3,6 +3,7 @@ alias ls='ls --color=auto -F --group-directories-first'
 alias a='ls -A'
 alias ll='ls -lh'
 alias la='a -lh'
+alias less='less -S'
 
 alias -g G='| grep'
 alias -g M='| less'
