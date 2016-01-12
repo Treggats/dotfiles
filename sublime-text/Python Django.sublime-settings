@@ -1,6 +1,5 @@
 {
   "pep8_max_line_length": 120,
-  "draw_white_space": "all",
   "auto_indent": true,
   "rulers": [79],
   "smart_indent": true,
