@@ -14,5 +14,12 @@ alias -g L='| wc -l'
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+# Tmux
+alias tl='tmux ls'
+alias t='tmux attach -dt'
+
+# Tree
+alias tree='tree -I ".git"'
+
 # Include custom alias
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
