@@ -9,8 +9,10 @@ if [ -d "$HOME/.rbenv/bin" ]; then
 fi
 
 # put ruby gems in the PATH
-if [ -d "$(ruby -rubygems -e "puts Gem.user_dir")/bin" ] ; then
-  export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
+if [ -f "/usr/bin/ruby" ]; then
+	if [ -d "$(ruby -rubygems -e "puts Gem.user_dir")/bin" ] ; then
+	  export PATH=$PATH:$(ruby -rubygems -e "puts Gem.user_dir")/bin
+	fi
 fi
 
 # export language setting
