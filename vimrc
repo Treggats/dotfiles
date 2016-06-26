@@ -19,7 +19,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'grassdog/tagman.vim'
 
 " Really nice prompt
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='powerlineish'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -109,6 +109,12 @@ let g:VimuxHeight = "40"
 Plug 'junegunn/vim-easy-align'
 vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>a <Plug>(EasyAlign)
+
+" NERDTree
+Plug 'scrooloose/nerdtree'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
 
 " I need to revisit those plugins before enabling:
 " Plug 'tpope/vim-projectionist'
