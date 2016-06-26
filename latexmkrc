@@ -1,3 +1,4 @@
+$pdf_previewer = 'start evince';
 $out_dir = './.output';
 $pdf_mode = 1;
 $pdflatex = "pdflatex %O %S";
