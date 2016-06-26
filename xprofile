@@ -1,10 +1,17 @@
-xrdb -merge ~/.Xresources
-xsetroot -cursor_name left_ptr
+# Configure PATH so that we can access our scripts below
+PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
+
+xsetroot -cursor_name left_ptr &
+xrdb -merge ~/.Xresources &
+xcompmgr -n &
+urxvtd &
+tray &
+pulseaudio --start &
 
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "keysym Caps_Lock = Control_L"
 xmodmap -e "add Control = Control_L"
 # disable system bell
 xset -b
-urxvtd &
+feh --bg-scale ~/Pictures/Wallpapers/moon-landscape.jpg
 ( ( sleep 10 && `which xscreensaver` -no-splash -display :0.0 ) & )
