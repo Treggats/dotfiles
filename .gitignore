@@ -5,3 +5,4 @@ xmonad/xmonad.o
 xinitrc
 muttrc
 .gitconfig
+vim/plugged
