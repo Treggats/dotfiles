@@ -7,6 +7,7 @@
   autocrlf = input
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = ~/.gitignore
+  attributesfile = /home/tonko/.gitattributes
 
 [color]
   branch = auto
@@ -57,3 +58,5 @@
     default = current
 [hub]
   protocol = ssh
+[diff "exif"]
+	textconv = exiftool
