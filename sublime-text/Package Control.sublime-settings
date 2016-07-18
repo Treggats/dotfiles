@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"AcademicMarkdown",
 		"Anaconda",
 		"ColorSchemeSelector",
 		"Colorsublime",
@@ -14,8 +15,11 @@
 		"Git",
 		"Git-StatusBar",
 		"GitGutter",
+		"Indent XML",
+		"IndentX",
 		"JSON Reindent",
 		"LaTeXTools",
+		"MarkdownEditing",
 		"Package Control",
 		"requirementstxt",
 		"SideBarEnhancements",
