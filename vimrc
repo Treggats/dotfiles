@@ -8,6 +8,14 @@ syntax on
 set background=dark
 filetype indent on
 
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+
+" Also, this installs to /usr/share/vim/vimfiles, which may not be in
+" your runtime path (RTP). Be sure to add it too, e.g:
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+
+
 source ~/.plugrc
 
 call plug#begin()
