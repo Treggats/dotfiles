@@ -214,3 +214,6 @@ command! -bar Tags if !empty(tagfiles()) | call fzf#run({
 \   'source': "sed '/^\\!/d;s/\t.*//' " . join(tagfiles()) . ' | uniq',
 \   'sink':   'tag',
 \ })
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
