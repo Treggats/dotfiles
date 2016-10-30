@@ -16,6 +16,9 @@ let g:tex_flavor = "latex"
 " your runtime path (RTP). Be sure to add it too, e.g:
 set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 
+set textwidth=100
+set colorcolumn=+1
+highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 source ~/.plugrc
 
