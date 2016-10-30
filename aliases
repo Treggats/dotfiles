@@ -20,6 +20,9 @@ alias t='tmux attach -dt'
 
 # Tree
 alias tree='tree -I ".git"'
+if [ ! -f /bin/tree ]; then
+  alias tree="find . -print | sort | sed 's;[^/]*/;|---;g;s;---|; |;g'"
+fi
 
 # Include custom alias
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
