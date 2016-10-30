@@ -1,3 +1,4 @@
+inoremap l; <ESC> " remap the escape key to 'l;'
 let mapleader = "\<Space>"
 let maplocalleader = ","
 
