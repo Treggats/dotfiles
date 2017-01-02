@@ -54,6 +54,9 @@
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   br = branch
 
+  rci = !sh -c 'git submodule foreach --recursive | sed 's/Entering//' | xargs -n 1 bash -c 'cd "$0" && git add -A && git commit''
+  rpu = !sh -c 'git push --recurse-submodules=on-demand && git submodule update'
+
 [push]
     default = current
 [hub]
