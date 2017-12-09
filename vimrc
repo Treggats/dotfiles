@@ -8,6 +8,9 @@ let g:loaded_python3_provider=1
 syntax on
 set background=dark
 filetype indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
@@ -19,6 +22,9 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 set textwidth=100
 set colorcolumn=+1
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+
+:nmap ,t phpunit %<cr>
+:nmap ,pt py.test -x --ff --pep8 %<cr>
 
 source ~/.plugrc
 
@@ -217,3 +223,4 @@ command! -bar Tags if !empty(tagfiles()) | call fzf#run({
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
+cmap flake w !flake8 %
