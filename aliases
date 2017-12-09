@@ -5,12 +5,7 @@ alias ll='ls -lh'
 alias la='a -lh'
 alias less='less -S'
 
-alias -g G='| grep'
-alias -g M='| less'
-alias -g L='| wc -l'
-
 # Git
-
 alias e="$EDITOR"
 alias v="$VISUAL"
 
@@ -23,6 +18,9 @@ alias tree='tree -I ".git"'
 if [ ! -f /bin/tree ]; then
   alias tree="find . -print | sort | sed 's;[^/]*/;|---;g;s;---|; |;g'"
 fi
+
+[[ -f ./vendor/bin/phpunit ]] && alias phpunit=./vendor/bin/phpunit
+[[ -f artisan ]] && alias artisan='php artisan $@'
 
 # Include custom alias
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
