@@ -64,4 +64,4 @@
 [hub]
   protocol = ssh
 [diff "exif"]
-	textconv = exiftool
+  textconv = exiftool
