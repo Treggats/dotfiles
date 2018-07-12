@@ -7,7 +7,7 @@
   autocrlf = input
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = ~/.gitignore
-  attributesfile = /home/tonko/.gitattributes
+  attributesfile = ~/.gitattributes
 
 [color]
   branch = auto
@@ -37,11 +37,8 @@
 [alias]
   a  = add
   co = checkout
-  ca = commit --amend -S -s
-  ci = commit -S -s
-  create-branch = !sh -c 'git push origin HEAD:refs/heads/$1 && git fetch origin && git branch --track $1 origin/$1 && cd . && git checkout $1' -
-  delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
-  merge-branch = !git checkout master && git merge @{-1}
+  ca = commit --amend -s
+  ci = commit -s
   l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
   ll = log --graph --decorate --oneline 
   lll = log --graph --date-order -C -M --pretty=format:'<%h> %Cgreen%d%Creset %s' --all --date=short
@@ -57,7 +54,10 @@
   rci = !sh -c 'git submodule foreach --recursive | sed 's/Entering//' | xargs -n 1 bash -c 'cd "$0" && git add -A && git commit''
   rpu = !sh -c 'git push --recurse-submodules=on-demand && git submodule update'
 
-  delete-upstream-branch = branch -dr origin/
+  cleanbranches = !sh -c 'git remote | xargs -n 1 git fetch -v --prune $1 && git branch --merged | egrep -v master | egrep -v develop | xargs git branch -d'
+
+[fetch]
+  prune = true
 
 [push]
     default = current
