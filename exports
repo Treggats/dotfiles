@@ -8,6 +8,10 @@ if [ -d "$HOME/.rbenv/bin" ]; then
   eval "$(rbenv init -)"
 fi
 
+if [ -d "$HOME/.config/composer/vendor/bin" ]; then
+  export PATH=$PATH:$HOME/.config/composer/vendor/bin/
+fi
+
 # put ruby gems in the PATH
 if [ -f "/usr/bin/ruby" ]; then
 	if [ -d "$(ruby -rubygems -e "puts Gem.user_dir")/bin" ] ; then
