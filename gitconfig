@@ -22,9 +22,6 @@
   changed = yellow
   untracked = red
 
-[diff]
-  tool = meld
-
 [difftool]
   prompt = false
 
@@ -35,33 +32,29 @@
   path = .gitconfig.local
 
 [alias]
-  a  = add
+  br = branch
   co = checkout
-  ca = commit --amend -s
   ci = commit -s
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+  l = log --graph \
+    --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' \
+    --abbrev-commit \
+    --date=relative \
+    --branches
   ll = log --graph --decorate --oneline 
-  lll = log --graph --date-order -C -M --pretty=format:'<%h> %Cgreen%d%Creset %s' --all --date=short
-  ls = "!cd ${GIT_PREFIX:-`pwd`}; printf \"# HEAD: \"; git log --oneline | head -n1; git status"
   ignore = !git update-index --assume-unchanged
   ignored = !git ls-files -v | grep "^[[:lower:]]"
-  st = status
-  up = !git fetch origin && git rebase origin/master
-  pu = !git fetch origin && git fetch upstream && git rebase upstream/master
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  br = branch
-
-  rci = !sh -c 'git submodule foreach --recursive | sed 's/Entering//' | xargs -n 1 bash -c 'cd "$0" && git add -A && git commit''
-  rpu = !sh -c 'git push --recurse-submodules=on-demand && git submodule update'
-
-  cleanbranches = !sh -c 'git remote | xargs -n 1 git fetch -v --prune $1 && git branch --merged | egrep -v master | egrep -v develop | xargs git branch -d'
 
 [fetch]
   prune = true
 
 [push]
     default = current
+
+[pull]
+  rebase = true
+
 [hub]
   protocol = ssh
+
 [diff "exif"]
   textconv = exiftool
